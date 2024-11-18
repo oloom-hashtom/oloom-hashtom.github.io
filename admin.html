@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آمار دانلود</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>آمار دانلود گروه‌ها</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>گروه</th>
+                    <th>دانلود شده</th>
+                    <th>کل اعضا</th>
+                </tr>
+            </thead>
+            <tbody id="stats-table">
+                <!-- اطلاعات به صورت داینامیک اضافه می‌شود -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // بارگذاری آمار از localStorage
+        const stats = JSON.parse(localStorage.getItem('downloadStats')) || {
+            class801: 0,
+            class802: 0,
+            class803: 0,
+            class804: 0,
+        };
+
+        const table = document.getElementById('stats-table');
+
+        // نمایش آمار برای هر گروه
+        Object.keys(stats).forEach(group => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${group}</td>
+                <td>${stats[group]}</td>
+                <td>30</td>
+            `;
+            table.appendChild(row);
+        });
+    </script>
+</body>
+</html>
