@@ -20,7 +20,7 @@ document.getElementById('download-btn').addEventListener('click', () => {
     };
 
     // افزایش شمارش دانلود برای گروه انتخاب شده
-    stats[selectedGroup] += 1;
+    stats[selectedGroup] += 0;
 
     // ذخیره آمار جدید در localStorage
     localStorage.setItem('downloadStats', JSON.stringify(stats));
