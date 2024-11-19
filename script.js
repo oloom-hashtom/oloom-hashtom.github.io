@@ -7,7 +7,7 @@ document.getElementById('download-btn').addEventListener('click', () => {
 
     // بررسی انتخاب گروه معتبر
     if (!validGroups.includes(selectedGroup)) {
-        alert('گروه نامعتبر است! لطفاً یک گروه معتبر انتخاب کنید.');
+        alert('کلاس نامعتبر است! لطفاً یک کلاس معتبر انتخاب کنید.');
         return;
     }
 
